@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!--Agregar etiquetas meta-->
+    <title>Ejercicio 1 DOM</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="bg-dark display-2 text-light text-center py-5">
+        Números Magicos.
+      </h1>
+    </header>
+    <main class="container">
+      <button
+        class="btn btn-primary d-flex"
+        onclick="btnComenzar()"
+        id="btnComenzar"
+      >
+        Comenzar el juego!
+      </button>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="input"
+          placeholder="Escribe un número"
+          aria-label="Escribe un número"
+        />
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          onclick="btnEnviar()"
+          id="btnEnviar"
+        >
+          Enviar
+        </button>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        let numeroRandom = 0
+      function btnComenzar() {
+         numeroRandom = Math.round(Math.random() * (10 - 1) + 1);
+        console.log(numeroRandom);
+        return numeroRandom;
+      }
+
+      function btnEnviar(){
+        let valor = parseInt(document.getElementById('input').value)
+        console.log(valor);
+        console.log(numeroRandom);
+        if(valor === numeroRandom){
+            alert('Adivinaste el número!')
+        }else if(valor < numeroRandom){
+            alert('Tu número es menor');
+        }else{
+            alert('Tu número es mayor')
+        }
+      }
+    </script>
+  </body>
+</html>
