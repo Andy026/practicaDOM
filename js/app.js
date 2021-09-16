@@ -18,24 +18,28 @@ function verMas() {
     btnVerMas.innerHTML = "Ocultar";
     btnVerMas.className = "btn btn-outline-danger";
     // paso 2: Crear el elemento hijo
-    let parrafo = document.createElement("p");
-    parrafo.innerHTML =
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iure veniam velit beatae cupiditate, vel nostrum temporibus nobis, repellendus numquam, veritatis maxime eius alias laborum unde mollitia corporis enim tempore illo perspiciatis voluptatem delectus. Labore aliquam quibusdam iste quod reprehenderit asperiores velit consectetur soluta obcaecati necessitatibus eveniet, ab odio alias laboriosam beatae illo numquam, repellendus ipsa, tempore ipsum doloremque assumenda ducimus maxime molestias! Beatae sunt odio provident repellendus, commodi assumenda rem ullam illum facere quidem esse recusandae aperiam accusantium cupiditate nisi exercitationem hic tempore laboriosam pariatur obcaecati ipsum. Deserunt, voluptatum enim? Impedit, magni molestiae. Necessitatibus amet recusandae quidem ipsam? Nihil!";
-    parrafo.className = "lead";
-    // paso 3: Agregar el nuevo elemento hijo en su padre
-    articulos[1].appendChild(parrafo);
-  }else{
-      console.log('ahora cambiar el texto del botón por ver mas...');
-    //Volver el boton a su estado original "ver mas..."
-    btnVerMas.innerHTML = 'Ver mas...'
-    btnVerMas.className = 'btn btn-outline-primary';
-    console.log(articulos[1].hasChildNodes()); //hasChildNodes pregunta si el nodo padre tiene hijos. La respuesta es true o false.
-    console.log(articulos[1].children.length)
-    //Eliminar el nodo hijo (parrafo)
-    if(articulos[1].hasChildNodes() && articulos[1].children.length >2){
-        //eliminar el parrafo
-        articulos[1].removeChild(articulos[1].children[2])
-    }
-    }
+    // let parrafo = document.createElement("p");
+    // parrafo.innerHTML =
+    //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iure veniam velit beatae cupiditate, vel nostrum temporibus nobis, repellendus numquam, veritatis maxime eius alias laborum unde mollitia corporis enim tempore illo perspiciatis voluptatem delectus. Labore aliquam quibusdam iste quod reprehenderit asperiores velit consectetur soluta obcaecati necessitatibus eveniet, ab odio alias laboriosam beatae illo numquam, repellendus ipsa, tempore ipsum doloremque assumenda ducimus maxime molestias! Beatae sunt odio provident repellendus, commodi assumenda rem ullam illum facere quidem esse recusandae aperiam accusantium cupiditate nisi exercitationem hic tempore laboriosam pariatur obcaecati ipsum. Deserunt, voluptatum enim? Impedit, magni molestiae. Necessitatibus amet recusandae quidem ipsam? Nihil!";
+    // parrafo.className = "lead";
+    // // paso 3: Agregar el nuevo elemento hijo en su padre
+    // articulos[1].appendChild(parrafo);
 
+    //segunda forma para crear elementos html dexde js
+    let parrafo = `<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iure veniam velit beatae cupiditate, vel nostrum temporibus nobis, repellendus numquam, veritatis maxime eius alias laborum unde mollitia corporis enim tempore illo perspiciatis voluptatem delectus. Labore aliquam quibusdam iste quod reprehenderit asperiores velit consectetur soluta obcaecati necessitatibus eveniet, ab odio alias laboriosam beatae illo numquam, repellendus ipsa, tempore ipsum doloremque assumenda ducimus maxime molestias! Beatae sunt odio provident repellendus, commodi assumenda rem ullam illum facere quidem esse recusandae aperiam accusantium cupiditate nisi exercitationem hic tempore laboriosam pariatur obcaecati ipsum. Deserunt, voluptatum enim? Impedit, magni molestiae. Necessitatibus amet recusandae quidem ipsam? Nihil!</p>`;
+    articulos[1].innerHTML += parrafo;
+    
+  } else {
+    console.log("ahora cambiar el texto del botón por ver mas...");
+    //Volver el boton a su estado original "ver mas..."
+    btnVerMas.innerHTML = "Ver mas...";
+    btnVerMas.className = "btn btn-outline-primary";
+    console.log(articulos[1].hasChildNodes()); //hasChildNodes pregunta si el nodo padre tiene hijos. La respuesta es true o false.
+    console.log(articulos[1].children.length);
+    //Eliminar el nodo hijo (parrafo)
+    if (articulos[1].hasChildNodes() && articulos[1].children.length > 2) {
+      //eliminar el parrafo
+      articulos[1].removeChild(articulos[1].children[2]);
+    }
+  }
 }
