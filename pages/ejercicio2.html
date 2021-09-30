@@ -31,44 +31,49 @@
         </nav>
       </header>
       <section class="container my-3">
-        <form class="border px-5 py-3">
+        <form class="border px-5 py-3" id="guardarDatos">
           <div class="mb-3">
-            <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" />
+            <label class="form-label" for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre"/>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Edad</label>
-            <input type="number" class="form-control" id="edad" />
+            <label class="form-label" for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad" name="edad"/>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">DNI</label>
-            <input type="text" class="form-control" id="dni" />
+            <label class="form-label" for="dni">DNI</label>
+            <input type="text" class="form-control" id="dni" name="dni"/>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Sexo</label>
-            <input type="text" class="form-control" id="sexo" />
+            <label class="form-label" for="sexo">Sexo</label>
+            <input type="text" class="form-control" id="sexo" name="sexo"/>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Peso</label>
-            <input type="text" class="form-control" id="peso" />
+            <label class="form-label" for="peso">Peso</label>
+            <input type="text" class="form-control" id="peso" name="peso"/>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Altura</label>
-            <input type="text" class="form-control" id="altura" />
+            <label class="form-label" for="altura">Altura</label>
+            <input type="text" class="form-control" id="altura" name="altura"/>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Año de nacimiento</label>
-            <input type="text" class="form-control" id="anioNacimiento" />
+            <label class="form-label" for="anioNacimiento">Año de nacimiento</label>
+            <input type="text" class="form-control" id="anioNacimiento" name="anioNacimiento"/>
           </div>
 
           <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
+      </section>
+      <section class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" id="mayordeEdad" name="mayordeEdad">¿Soy mayor de edad?</button>
+        <br>
+        <button class="btn btn-primary" id="mostrarGen" name="mostrarGen">Mostrar generación</button>
       </section>
     </main>
     <script src="/js/bootstrap.min.js"></script>
